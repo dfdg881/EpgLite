@@ -3,6 +3,10 @@
 
 EPG 整合工具：抓取 XMLTV 节目单，自动匹配设定的频道与别名，输出文件
 
+#使用
+https://raw.githubusercontent.com/dfdg881/EpgLite/refs/heads/main/output/epg.gz
+https://cdn.jsdelivr.net/gh/dfdg881/EpgLite@main/output/epg.gz
+
 ## 本地运行
 ``` python
 pip install opencc-python-reimplemented certifi pytz
