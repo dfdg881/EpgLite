@@ -1,7 +1,7 @@
 # GitHub Actions：自动运行 EPG 脚本并提交生成的节目单
 # 用法：把 epg.py、config/ 与本文档一起放入仓库（保持根目录布局），
 #       在仓库 Actions 页面手动触发，或按下方定时计划自动运行。
-name: merge epg
+name: Update schedule
 
 on:
   workflow_dispatch:          # 手动触发：Actions → Run workflow
