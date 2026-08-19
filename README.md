@@ -1,57 +1,33 @@
 # EpgLite
 
-独立的单文件 EPG 获取工具：抓取 XMLTV 节目单，自动匹配频道与别名，输出 epg.xml / epg.gz。
-核心功能提取自 [Guovin/iptv-api](https://github.com/Guovin/iptv-api) 的 EPG 模块。
+EPG 整合工具：抓取 XMLTV 节目单，自动匹配设定的频道与别名，输出文件
 
-## 频道匹配流程（两轮，前一轮命中即不再进入后一轮）
+## 运行
+``` python
+pip install opencc-python-reimplemented certifi pytz
+python epg.py
+```
 
-1. 直接匹配：demo.txt/频道列表中的每个频道名是各自独立的目标频道。
-先按原名精确匹配，再按规范化名称匹配（自动去除 高清/HD/括号/分隔符
-等冗余；同一规范化名对应多个目标时，先按分辨率标记分流——显示名带
-4K/8K/UHD/超清/杜比 等标记优先匹配带同标记的目标，如“CCTV16 4K”、
-“CCTV-16-4K” 归“CCTV16-4K”，避免 4K 频道被并入普清频道；再取名称
-最长包含于 EPG 频道名的目标，如“北京卫视高清”归“北京卫视”）。
-2. 别名匹配：仍未匹配的 EPG 频道，通过 config/alias.txt 别名表解析
-（精确别名 / re: 正则别名 / 规范化兜底），映射回目标频道。
 
-匹配结果始终保留 demo.txt 中的原始频道名，不会因别名把多个频道合并成一个。
-例如 alias 中配置“北京卫视4K,北京卫视”且 demo 中同时有“北京卫视”和
-“北京卫视4K”时，两者会作为两个独立频道输出。
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--channels` | 频道列表文件（支持 txt/#genre#/m3u 格式） | `config/demo.txt` |
+| `--epg-sources` | 订阅源文件 | `config/epg.txt` |
+| `--alias` | 别名表文件 | `config/alias.txt` |
+| `--extra-epg-url` | 临时附加 EPG 源 URL（可多次指定） | 无 |
+| `--output-xml` | 输出 XML 文件路径 | `output/epg/epg.xml` |
+| `--output-gz` | 输出 GZ 压缩文件路径 | `output/epg/epg.gz` |
+| `--no-gz` | 不生成 .gz 压缩文件 | 生成 |
+| `--include-unmatched` | 保留未匹配到需求频道的 EPG 频道 | 不保留 |
+| `--days-back` | 节目回顾天数 | `1` 天 |
+| `--days-ahead` | 节目预告天数 | `14` 天 |
+| `--fetch-concurrency` | 并发抓取数 | `4` |
+| `--proxy` | HTTP 代理地址 | 无 |
+| `--timezone` | 时间戳时区 | `Asia/Shanghai` |
+| `--auto-disable` | 失败的源自动注释禁用 | 不自动禁用 |
+| `--verbose` | 详细日志输出 | 不启用 |
 
-## 文件说明
-
-epg.py                 主程序（单文件，仅需 Python 标准库，可选 opencc/pytz/certifi 增强）
-config/epg.txt         EPG 订阅源列表（支持 \[WHITELIST] 区块、行内 Header=Value）
-config/alias.txt       频道别名表（主名,别名1,别名2,...；re: 开头为正则别名）
-config/demo.txt        频道列表模板（txt/#genre# 格式）
-output/epg.xml     已生成的节目单示例（XMLTV 格式）
-output/epg.gz      节目单 gzip 压缩版
-
-## 快速开始
-
-python3 epg.py
-
-## 常用参数
-
-\--channels 频道列表文件        （支持 txt/#genre#/m3u 格式，默认 config/demo.txt）
---epg-sources 订阅源文件        （默认 config/epg.txt）
---alias 别名表                 （默认 config/alias.txt）
---extra-epg-url URL            （临时附加 EPG 源，可多次指定）
---output-xml / --output-gz     输出路径（默认 output/epg/epg.xml、epg.gz）
---no-gz                        不生成压缩版
---include-unmatched            保留未匹配到需求频道的 EPG 频道
---days-back / --days-ahead     节目时间窗口（默认 1 / 14 天）
---fetch-concurrency            并发抓取数（默认 4）
---proxy http://127.0.0.1:7890  代理
---timezone Asia/Shanghai       时间戳时区
---auto-disable                 失败的源自动注释禁用
---verbose                      详细日志
-
-## 可选增强（未安装自动降级）
-
-pip install opencc    # 标题繁体转简体
-pip install pytz      # 时区（Python<3.9 时需要）
-pip install certifi   # HTTPS 证书
+> **说明：** `--output-xml` 和 `--output-gz` 可以同时使用，分别指定两种格式的输出路径。`--extra-epg-url` 支持多次指定以附加多个 EPG 源。
 
 ## 致谢
 
