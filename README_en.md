@@ -1,0 +1,37 @@
+# EpgLite
+
+[中文](./README.md) | English
+
+EPG integration tool: Fetch XMLTV program guides, automatically match configured channels and aliases, output files.
+
+## Usage
+
+``` python
+pip install opencc-python-reimplemented certifi pytz
+python epg.py --[arguments]
+```
+
+| Argument | Description | Default |
+|----------|-------------|---------|
+| `--channels` | Channel list file (supports txt/#genre#/m3u formats) | `config/demo.txt` |
+| `--epg-sources` | Subscription source file | `config/epg.txt` |
+| `--alias` | Alias mapping file | `config/alias.txt` |
+| `--extra-epg-url` | Temporarily append additional EPG source URL (can be specified multiple times) | None |
+| `--output-xml` | Output XML file path | `output/epg/epg.xml` |
+| `--output-gz` | Output GZ compressed file path | `output/epg/epg.gz` |
+| `--no-gz` | Do not generate .gz compressed file | Generated |
+| `--include-unmatched` | Keep EPG channels that do not match any requested channels | Not kept |
+| `--days-back` | Number of days to look back for programs | `1` day |
+| `--days-ahead` | Number of days to look ahead for programs | `14` days |
+| `--fetch-concurrency` | Concurrent fetch count | `4` |
+| `--proxy` | HTTP proxy address | None |
+| `--timezone` | Timestamp timezone | `Asia/Shanghai` |
+| `--auto-disable` | Automatically comment out failed sources | Not auto-disabled |
+| `--verbose` | Enable verbose logging | Disabled |
+
+> **Note:** `--output-xml` and `--output-gz` can be used together to specify paths for both output formats respectively. `--extra-epg-url` supports multiple specifications to append multiple EPG sources.
+
+## Acknowledgements
+
+[Guovin/iptv-api](https://github.com/Guovin/iptv-api)
+[mytv-android/myEPG](https://github.com/mytv-android/myEPG)
