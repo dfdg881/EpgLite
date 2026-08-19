@@ -1,4 +1,5 @@
 # EpgLite
+[English](./README_en.md) | 中文
 
 EPG 整合工具：抓取 XMLTV 节目单，自动匹配设定的频道与别名，输出文件
 
