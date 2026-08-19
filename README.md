@@ -56,4 +56,5 @@ pip install certifi   # HTTPS 证书
 ## 致谢
 
 [Guovin/iptv-api](https://github.com/Guovin/iptv-api)
+[mytv-android/myEPG](https://github.com/mytv-android/myEPG)
 
