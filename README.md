@@ -36,3 +36,5 @@ python epg.py --[运行参数]
 
 [mytv-android/myEPG](https://github.com/mytv-android/myEPG)
 
+代码为DeepSeek Harness生成，如有问题请联系https://www.deepseek.com/harness/
+
