@@ -71,7 +71,5 @@ EPG\_SCRIPT 环境变量即可。
 
 ## 致谢
 
-本项目提取并改编自 [Guovin/iptv-api](https://github.com/Guovin/iptv-api)，
-感谢原作者 Guovin 的开源贡献：EPG 流式解析、多源去重合并、别名归一、
-XMLTV 输出等核心设计均源自该项目。
+[Guovin/iptv-api](https://github.com/Guovin/iptv-api)
 
