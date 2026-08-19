@@ -6,7 +6,8 @@ name: Update schedule
 on:
   workflow_dispatch:          # 手动触发：Actions → Run workflow
   schedule:
-    - cron: "0 10,22 * * *"   
+    - cron: "0 3,6,18 * * *"
+      timezone: "Asia/Shanghai"
 permissions:
   contents: write             # 允许把生成的 output/ 提交回仓库
 
