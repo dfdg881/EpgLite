@@ -64,7 +64,7 @@ pip install certifi   # HTTPS 证书
 1. 把 epg.py、config/（alias.txt、epg.txt、demo.txt）和 .github/workflows/epg.yml
 一起提交到 GitHub 仓库根目录；
 2. 仓库 Actions 页面手动点 “Run workflow”，或按文件里的定时计划
-（默认每天 UTC 03:00）自动运行；
+（默认每天 UTC 22:00和10:00）自动运行；
 3. 运行结束后 output/epg/epg.xml 与 epg.gz 会自动提交回仓库。
 若脚本不叫 epg.py（如 merge.py），改 workflow 中 merge 步骤的
 EPG\_SCRIPT 环境变量即可。
