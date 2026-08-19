@@ -3,7 +3,7 @@
 
 EPG 整合工具：抓取 XMLTV 节目单，自动匹配设定的频道与别名，输出文件
 
-## 运行
+## 本地运行
 ``` python
 pip install opencc-python-reimplemented certifi pytz
 python epg.py --[运行参数]
