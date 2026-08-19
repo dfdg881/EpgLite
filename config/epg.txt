@@ -1,6 +1,6 @@
 # 这是EPG订阅列表，用于生成M3U结果频道菜单信息
 # This is the EPG subscription list used to generate M3U result channel menu information
-https://epg.136605.xyz/1day.xml
+https://epg.136605.xyz/3days.xml.gz 
 https://raw.githubusercontent.com/mytv-android/SCTV_EPG/refs/heads/main/epg.xml
 https://raw.githubusercontent.com/litiande03/epg/refs/heads/master/pl.xml.gz
 http://epg.51zmt.top:8000/e.xml
