@@ -4,7 +4,11 @@
 
 EPG integration tool: Fetch XMLTV program guides, automatically match configured channels and aliases, output files.
 
-## Usage
+##Usage
+https://raw.githubusercontent.com/dfdg881/EpgLite/refs/heads/main/output/epg.gz
+https://cdn.jsdelivr.net/gh/dfdg881/EpgLite@main/output/epg.gz
+
+## Run
 
 ``` python
 pip install opencc-python-reimplemented certifi pytz
