@@ -1,0 +1,94 @@
+# 这是频道名称的别名名单，用于获取接口时将多种名称映射为一个名称的结果，可以提升获取量与准确率
+# 格式：主名（对应demo.txt模板中的频道名称）,别名1,别名2,别名3
+# 支持使用正则表达式匹配别名，以re:开头的别名将被识别为正则表达式，例如CCTV-1,re:(?i)^\s*CCTV[-\s_]*0?1(?![0-9Kk+])[\s\S]*$
+# This is the alias list for channel names, used to map multiple names to a single name when fetching from the interface, improving the fetch volume and accuracy.
+# Format: Main name (corresponds to channel name in demo.txt template), alias1, alias2, alias3
+# Aliases support regex matching. Aliases starting with re: are recognized as regular expressions, e\.g\. CCTV-1,re:(?i)^\s*CCTV[-\s_]*0?1(?![0-9Kk+])[\s\S]*$
+CCTV16-4K,CCTV16 4K
+兵器科技,CCTV兵器,CCTV兵器科技,CCTV-兵器科技,CCTV兵器科技HD
+第一剧场,CCTV第一剧场,CCTV-第一剧场,CCTV第一剧场HD,风云剧场,中国电影,CCTV电影轮播
+发现之旅,CCTV发现之旅,CCTV-发现之旅,中央新影-发现之旅
+风云剧场,CCTV风云剧场,CCTV-风云剧场,CCTV风云剧场HD
+风云音乐,CCTV风云音乐,CCTV-风云音乐,CCTV风云音乐HD
+风云足球,CCTV风云足球,CCTV-风云足球,CCTV风云足球HD
+央视台球,CCTV央视台球,CCTV-央视台球,CCTV央视台球HD,CCTV-台球
+高尔夫网球,CCTV高尔夫球,CCTV高尔夫·网球,CCTV-高尔夫网琿,CCTV高尔夫网球,CCTV-高尔夫网球,CCTV高尔夫网球HD,CCTV-央视高网
+怀旧剧场,CCTV怀旧剧场,CCTV-怀旧剧场,CCTV怀旧剧场HD,CCTV怀旧剧圿,CCTV-怀旧剧圿
+老故事,CCTV老故事,CCTV-老故事,CCTV老故亿,中央新影-老故事,中央新影-老故亿,重温经典
+女性时尚,CCTV女性时尿,CCTV-女性时尿,CCTV女性时尚,CCTV-女性时尚,CCTV女性时尚HD
+世界地理,CCTV世界地理,CCTV-世界地理,CCTV世界地理HD
+文化精品,CCTV文化精品,CCTV-文化精品,CCTV央视文化精品,CCTV-央视文化精品,CCTV央视文化精品HD
+百姓健康,CCTV卫生健康,CCTV-卫生健康,CCTV卫生与健康
+中学生,CCTV中学甿,CCTV中学生,CCTV-中学生,中央新影-中学甿,中央新影-中学生
+
+CETV-1,CETV1,CETV1中国教育,CETV1 中国教育,中国教育1,中国教育1HD
+CETV-2,CETV2,CETV2中国教育,CETV2 中国教育,中国教育2,中国教育2HD
+CETV-3,CETV3,CETV3中国教育,CETV3 中国教育,中国教育3,中国教育3HD
+CETV-4,CETV4,CETV4中国教育,CETV4 中国教育,中国教育4,中国教育4HD
+CETV早教,CETV早期教育,早期教育
+CGTN英语,CGTN英语新闻
+CGTN俄语,CGTN俄罗斯语
+
+广东珠江,GDTV-2,珠江,珠江频道,珠江台,广东珠江高清,珠江高清
+
+翡翠台,TVb翡翠台,tvb翡翠台,TVB翡翠台
+明珠台,TVb明珠台,tvb明珠台,TVB明珠台,TVB Pearl
+北京卫视,北京卫视4K,北京卫视4K超高清
+凤凰中文,凤凰卫视中文台
+凤凰香港,凤凰卫视香港台
+福建旅游,福建文旅体育
+福建经济,福建经视
+FZTV1,FZTV-1,福州综合,福州1-新闻
+FZTV3,FZTV-3,福州生活,福州3-生活
+
+无线新闻台,無綫新聞台,無線新聞台,无线新闻,TVB无线新闻,TVB无线新闻台
+
+港台电视 31,港台電視 31,RTHK31,RTHK 31,RTHK-31
+港台电视 32,港台電視 32,RTHK32,RTHK 32,RTHK-32
+中央電視台綜合頻道,中央電視台綜合頻道（CCTV-1綜合),CCTV-1綜合,RTHK33,RTHK 33,RTHK-33
+中國環球電視網紀錄頻道,中國環球電視網紀錄頻道 (CGTN紀錄頻道),CGTN紀錄頻道,RTHK34,RTHK 34,RTHK-34
+CGTN 英語頻道,RTHK35,RTHK 35,RTHK-35
+港台电视 36,港台電視 36,RTHK36,RTHK 36,RTHK-36
+
+*HOY 國際財經台,HOY 國際財經台,*HOY 国际财经台,HOY 国际财经台,HOY国际财经台
+*HOY TV,HOY TV
+*HOY 資訊台,HOY 資訊台,*HOY 资讯台,HOY 资讯台,HOY资讯台
+
+赣州新闻,GZSXW,GZSNews
+
+北京卡酷少儿,卡酷少儿,卡酷少儿高清,卡酷少儿HD,北京卡酷少儿HD,卡酷少儿高码,北京卡酷少儿高码,KAKU,kaku,KaKu,卡酷动画,卡酷动画HD
+
+黑莓电影,NewTV黑莓电影
+黑莓动画,NewTV黑莓动画
+家庭剧场,NewTV家庭剧场
+惊悚悬疑,NewTV惊悚悬疑
+超级电影,NewTV超级电影
+动作电影,NewTV动作电影
+哒啵电竞,NewTV哒啵电竞
+
+游戏风云,SiTV游戏风云
+动漫秀场,SiTV动漫秀场
+游戏风云.SiTV游戏风云
+
+爱动漫,iHOT爱动漫
+新动漫,iHOT新动漫
+爱幼教,iHOT爱幼教
+爱电竞,iHOT爱电竞
+
+电竞天堂,BesTV电竞天堂
+宝宝动画,BesTV宝宝动画
+
+嘉佳卡通,广东嘉佳卡通
+金鹰卡通,湖南金鹰卡通
+哈哈炫动,炫动卡通,上海哈哈炫动
+优漫卡通,江苏优漫卡通
+
+北京卫视4K,北京卫视
+深圳卫视4K，深圳卫视
+广东卫视4K,广东卫视
+山东卫视4K,山东卫视
+浙江卫视4K,浙江卫视
+江苏卫视4K,江苏卫视
+东方卫视4K,东方卫视
+四川卫视,四川卫视4K,四川卫视4K25,四川卫视4K50
+湖南卫视,湖南卫视4K,湖南卫视4K25,湖南卫视4K50
