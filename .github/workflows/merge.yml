@@ -1,0 +1,42 @@
+# GitHub Actions：自动运行 EPG 脚本并提交生成的节目单
+# 用法：把 epg.py、config/ 与本文档一起放入仓库（保持根目录布局），
+#       在仓库 Actions 页面手动触发，或按下方定时计划自动运行。
+name: merge epg
+
+on:
+  workflow_dispatch:          # 手动触发：Actions → Run workflow
+  schedule:
+    - cron: " 10,22 * * *"   
+permissions:
+  contents: write             # 允许把生成的 output/ 提交回仓库
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install optional deps
+        run: |
+          pip install  pytz opencc-python-reimplemented certifi
+          
+      - name: Update EPG
+        run: python epg.py
+        
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          if ! git diff --staged --quiet; then
+            commit_time=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S %z')
+            git commit -m "Github Action Auto Updated [${commit_time}]"
+            git push --force
+          fi
