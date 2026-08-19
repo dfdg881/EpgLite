@@ -1,4 +1,4 @@
-# EpgLite（轻量EPG）
+# EpgLite
 
 独立的单文件 EPG 获取工具：抓取 XMLTV 节目单，自动匹配频道与别名，输出 epg.xml / epg.gz。
 核心功能提取自 [Guovin/iptv-api](https://github.com/Guovin/iptv-api) 的 EPG 模块。
