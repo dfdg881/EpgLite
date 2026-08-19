@@ -53,22 +53,6 @@ pip install opencc    # 标题繁体转简体
 pip install pytz      # 时区（Python<3.9 时需要）
 pip install certifi   # HTTPS 证书
 
-## GitHub Actions 自动更新
-
-仓库内自带 .github/workflows/epg.yml，流程为：
-
-1. Checkout（setup）→ 2. 安装 Python → 3. 运行脚本（步骤名 merge）→ 4. 提交结果
-
-使用方法：
-
-1. 把 epg.py、config/（alias.txt、epg.txt、demo.txt）和 .github/workflows/epg.yml
-一起提交到 GitHub 仓库根目录；
-2. 仓库 Actions 页面手动点 “Run workflow”，或按文件里的定时计划
-（默认每天 UTC 22:00和10:00）自动运行；
-3. 运行结束后 output/epg/epg.xml 与 epg.gz 会自动提交回仓库。
-若脚本不叫 epg.py（如 merge.py），改 workflow 中 merge 步骤的
-EPG\_SCRIPT 环境变量即可。
-
 ## 致谢
 
 [Guovin/iptv-api](https://github.com/Guovin/iptv-api)
