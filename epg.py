@@ -1,30 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-EpgLite（轻量EPG）—— 独立版 EPG（电子节目单）获取工具
-======================================================
-
-从 https://github.com/Guovin/iptv-api 中提取的 EPG 获取功能，
-整合为单个 Python 文件，无需安装整个项目即可单独使用：
-
-  - 从多个 EPG 订阅源（config/epg.txt）并发抓取 XMLTV 格式节目单
-  - 频道自动匹配采用两轮流程：先直接匹配（频道原名精确 / 规范化名称，自动去除
-    高清/HD/4K/括号/分隔符 等冗余后缀），未匹配到的再尝试 alias.txt 别名解析
-    （精确别名 / re: 正则别名）；匹配结果保留 demo.txt 中的原始频道名，
-    不会因别名把多个频道（如“北京卫视”与“北京卫视4K”）合并成一个
-  - 过滤节目时间窗口（默认向前 14 天、向后 1 天），标题繁体转简体（可选 OpenCC）
-  - 多源去重（按内容哈希）并按优先级（白名单 > 配置源 > 附加源）合并节目
-  - 输出标准 XMLTV 文件（output/epg/epg.xml）及 gzip 压缩版（output/epg/epg.gz）
-
-依赖：仅 Python 标准库即可运行；可选安装 opencc 实现繁体转简体、pytz/certifi 增强。
-
-用法示例：
-    python3 epg.py                                    # 使用默认 config/ 下的配置文件
-    python3 epg.py --channels 我的频道.txt --epg-sources my_epg.txt
-    python3 epg.py --channels m3u文件.m3u --output-xml out/epg.xml --no-gz
-    python3 epg.py --days-ahead 7 --fetch-concurrency 4 --verbose
-"""
-
 import argparse
 import gzip
 import hashlib
